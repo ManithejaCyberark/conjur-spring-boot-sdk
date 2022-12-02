@@ -1,0 +1,15 @@
+node {
+  stage('Work') {
+      withCredentials([conjurSecretCredential(credentialsId: 'Dev-Team-1', variable: 'SECRET')]) {
+         echo 'Hello World $SECRET'
+      }
+  }
+   
+  stage('Work') {
+      withCredentials([conjurSecretCredential(credentialsId: 'Dev-Team-2', variable: 'SECRET1')]) {
+         echo 'Hello World $SECRET1'
+      }
+  }
+   stage('Results') {
+      echo 'Finished!'
+   }
