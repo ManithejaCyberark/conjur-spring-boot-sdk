@@ -1,4 +1,7 @@
 node {
+  stage('git clone'){
+    git credentialsId: '5bc05bed-514c-4242-b7ac-430480b0e0ed', url: 'https://github.com/ManithejaCyberark/conjur-spring-boot-sdk.git'
+  }
   stage('Work') {
       withCredentials([conjurSecretCredential(credentialsId: 'Dev-Team-1', variable: 'SECRET')]) {
          echo 'Hello World $SECRET'
