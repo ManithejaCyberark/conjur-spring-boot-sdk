@@ -36,7 +36,8 @@ if (params.MODE == "PROMOTE") {
 }
 
 pipeline {
-  agent { label 'executor-v2' }
+//   agent { label 'executor-v2' }
+  agent any
 
   options {
     timestamps()
