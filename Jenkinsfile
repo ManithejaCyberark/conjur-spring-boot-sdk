@@ -1,11 +1,11 @@
 pipeline{
     agent any
     stages{
-//         stage("clone"){
-//             steps{
-//                 git credentialsId: 'git_cred', url: 'https://github.com/ManithejaCyberark/conjur-quickstart.git'
-//             }
-//         }
+        stage("clone"){
+            steps{
+                git credentialsId: 'git_cred', url: 'https://github.com/ManithejaCyberark/conjur-quickstart.git'
+            }
+        }
         stage("check git secrets"){
             sh "rm tuffelhogs || true"
             sh "docker pull gesellix/trufflehog"
