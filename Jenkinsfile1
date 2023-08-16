@@ -1,11 +1,16 @@
-node{
-      stage{
-      sh './build-tools-image.sh'
-      }
-    stage("maven version"){
-      def mavenHome =  tool name: "maven", type: "maven"
-      def mavenCMD = "${mavenHome}/bin/mvn"
-      sh "${mavenCMD} --version"
-      sh "${mavenCMD} clean package"
-    }
+// node{
+//       stage{
+//       sh './build-tools-image.sh'
+//       }
+//     stage("maven version"){
+//       def mavenHome =  tool name: "maven", type: "maven"
+//       def mavenCMD = "${mavenHome}/bin/mvn"
+//       sh "${mavenCMD} --version"
+//       sh "${mavenCMD} clean package"
+//     }
+// }
+
+pipeline{
+agent any
+
 }
